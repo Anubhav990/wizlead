@@ -7,6 +7,15 @@ import Image from 'next/image';
 import { useRouter } from 'next/navigation';
 
 const WizardSignupPage = () => {
+    type FormErrors = {
+        [key: string]: string | undefined;
+        fullName?: string;
+        email?: string;
+        password?: string;
+        confirmPassword?: string;
+    };
+
+
     const router = useRouter();
     const [showPassword, setShowPassword] = useState(false);
     const [showConfirmPassword, setShowConfirmPassword] = useState(false);
@@ -17,7 +26,7 @@ const WizardSignupPage = () => {
         password: '',
         confirmPassword: ''
     });
-    const [errors, setErrors] = useState({});
+    const [errors, setErrors] = useState<FormErrors>({});
 
     const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
         const { name, value } = e.target;
@@ -36,7 +45,7 @@ const WizardSignupPage = () => {
     };
 
     const validateForm = () => {
-        const newErrors: any = {};
+        const newErrors: FormErrors = {};
 
         if (!formData.fullName.trim()) {
             newErrors.fullName = 'Name is required';

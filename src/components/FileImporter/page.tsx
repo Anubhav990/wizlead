@@ -122,7 +122,7 @@ export default function UploadCSV() {
 
     try {
       const templateName = "hello_world";
-      const templateVariables = [];
+      const templateVariables: any[] = [];
 
       const res = await fetch("/api/send-whatsapp", {
         method: "POST",
