@@ -36,7 +36,7 @@ export default function DataDeletion() {
               <p className="text-gray-300 leading-relaxed">
                 We respect your privacy and provide full control over your data.
                 If you would like to request deletion of any information
-                associated with your use of <span className="text-purple-300">MessageNumbersLeads</span>, 
+                associated with your use of <span className="text-purple-300">WizLead</span>, 
                 please contact our support team.
               </p>
 
